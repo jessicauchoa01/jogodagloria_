@@ -1,0 +1,339 @@
+@use "botoes";
+@use "colors";
+@use "fonts";
+
+body {
+  background-color: $background;
+  font-family: $lilita;
+  color: $branco;
+  transition: $transicao;
+
+  button {
+    background-color: $corBotao;
+    box-shadow: $sombraBotao;
+    text-shadow: $sombraTxt;
+    padding: 0.8rem 4.7rem;
+    border-radius: 2rem;
+    transition: $transicao;
+  }
+
+  button:hover {
+    transition: $transicao;
+    background-color: $hoverCor;
+    box-shadow: $hoverSombra;
+    font-size: 1.2rem;
+  }
+
+  .meio {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+
+    .direita {
+      text-align: center;
+      margin-top: 2.5rem;
+      margin-right: 7.5rem;
+
+      .dado {
+        width: 150px;
+        height: 150px;
+        margin: 2.5rem 10rem 2rem;
+        background-color: $preto;
+        border-radius: 10rem;
+        border: 8px solid $amareloCasa;
+
+        .dado-img {
+          height: 90px;
+          margin-top: 1.5rem;
+        }
+      }
+
+      .circulo {
+        margin-right: 1rem;
+        border-radius: 5rem;
+        padding: 1rem;
+        background-color: $azulClaro;
+      }
+
+      .amarelo {
+        background-color: $amarelo;
+      }
+
+      .player {
+        border-radius: 1.5rem;
+        display: flex;
+        padding: 0.8rem 1rem;
+        background-color: $azulmedio;
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+        opacity: 0.5;
+        transition: all 0.75s;
+      }
+
+      .player--active {
+        opacity: 1;
+      }
+    }
+  }
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+
+    .top-esquerda {
+      margin-top: 2.5rem;
+      margin-left: 7rem;
+      display: flex;
+      font-size: 2rem;
+
+      .logo {
+        width: 122px;
+        height: 60px;
+      }
+    }
+    .top-direita {
+      padding: 1rem;
+      margin-right: 7.5rem;
+      margin-top: 2.5rem;
+
+      .regras {
+        margin-right: 2.5rem;
+      }
+    }
+  }
+
+  .esquerda-grid {
+    margin-top: 1.5rem;
+    margin-left: 7rem;
+    display: grid;
+    grid-template-columns: repeat(6, 70px);
+    grid-template-rows: repeat(6, 70px);
+    grid-gap: 10px;
+    grid-auto-rows: auto;
+
+    .casa {
+      background-color: $amareloCasa;
+      text-align: center;
+      border-radius: 1.5rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
+      font-weight: bolder;
+      color: $bege;
+      box-shadow: -1px 5px $bege;
+    }
+
+    .passaro {
+      background-color: $passaro;
+      box-shadow: -1px 5px $amareloPassaro;
+
+      .passaro-img {
+        width: 60px;
+      }
+    }
+
+    .carro {
+      background-color: $carro;
+      box-shadow: -1px 5px #554b73;
+
+      .carro-img {
+        width: 60px;
+      }
+    }
+
+    .poco {
+      background-color: $poco;
+      box-shadow: -1px 5px rgb(158, 156, 134);
+
+      .poco-img {
+        width: 55px;
+      }
+    }
+
+    .caranguejo {
+      background-color: $caranguejo;
+      box-shadow: -1px 5px $shadowcaranguejo;
+
+      .caranguejo-img {
+        width: 60px;
+      }
+    }
+
+    .fogo {
+      background-color: $fogo;
+      box-shadow: -1px 5px $fogoInferno;
+      .fogo-img {
+        width: 36px;
+      }
+    }
+
+    .fim {
+      background-color: $fim;
+      box-shadow: -1px 5px $verde;
+      .fim-img {
+        width: 34px;
+      }
+    }
+  }
+
+  .filtro {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    transition: 0.6 ease-in-out;
+    z-index: 2;
+    /* opacity: 0; */
+    /* visibility-none ou z-index: -1; */
+  }
+
+  .modal-campeao {
+    width: 400px;
+    height: 200px;
+    top: 50%;
+    left: 20%;
+    position: fixed;
+    display: flex;
+    transform: translate(50%, -50%);
+    background-color: $modal;
+    padding: 2rem;
+    border-radius: 1rem;
+    transition: 0.6s ease-in-out;
+    z-index: 3;
+    opacity: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal-casa {
+    width: 400px;
+    height: 200px;
+    top: 50%;
+    left: 20%;
+    position: fixed;
+    display: flex;
+    transform: translate(50%, -50%);
+    background-color: $modal;
+    padding: 2rem;
+    border-radius: 1rem;
+    transition: 0.6s ease-in-out;
+    z-index: 3;
+    opacity: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .titulo {
+    font-size: 2rem;
+    color: $amareloCasa;
+  }
+  .imagem-trofeu {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+
+  .fechar-campeao {
+    display: flex;
+    height: 30px;
+    width: 100px;
+    font-size: 0.8rem;
+    margin-top: 30px;
+    white-space: nowrap;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal {
+    position: fixed;
+    display: flex;
+    transform: translate(50%, -50%);
+    background-color: $modal;
+    padding: 2rem;
+    border-radius: 1rem;
+    transition: 0.6s ease-in-out;
+    z-index: 3;
+    opacity: 0;
+  }
+
+  .grid-modal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 1.5rem;
+    grid-auto-rows: 100px;
+    column-gap: 2rem;
+  }
+
+  .regra {
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .imagem-regra {
+    width: 80px;
+    height: 80px;
+  }
+
+  .caixinha {
+    text-align: left;
+    flex-direction: row;
+    justify-content: right;
+    font-size: 1rem;
+  }
+  .aberto {
+    opacity: 1;
+    top: 50%;
+    transition: 0.6s ease-in-out;
+  }
+
+  .close {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: absolute;
+    top: -25px;
+    right: 25px;
+  }
+
+  .close:hover {
+    transition: 0.4s ease-in-out;
+  }
+}
+
+.pino0 {
+  width: 5px;
+  height: 5px;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  transition: 0.3s ease-in-out;
+  z-index: 1;
+}
+
+.pino1 {
+  width: 5px;
+  height: 5px;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  transition: 0.3s ease-in-out;
+  z-index: 1;
+}
+
+.hide {
+  display: none;
+}

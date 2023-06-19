@@ -1,0 +1,62 @@
+body {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #49D1F0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.caixa {
+  text-align: center;
+}
+
+.dados {
+  height: 306px;
+  width: 588px;
+  margin-bottom: -3rem;
+}
+
+.titulo {
+  letter-spacing: -0.5rem;
+  text-shadow: -1px 7px 1px #188ea8;
+  font-weight: 900;
+  font-size: 5rem;
+  font-family: "Lilita One", cursive;
+  color: #ffffff;
+}
+
+.jogar {
+  font-weight: 900;
+  font-family: "Lilita One", cursive;
+  background-color: #397CFF;
+  color: #FFFFFF;
+  padding: 1rem 3.5rem;
+  border-radius: 2rem;
+  font-size: 11px;
+  text-shadow: -1px 2px #188ea8;
+  box-shadow: -1px 5px #2d68dd;
+  margin-top: 3rem;
+  transition: 0.4s ease-in-out;
+}
+
+.jogar:hover {
+  transition: 0.4s ease-in-out;
+  background-color: #241aaa;
+  box-shadow: -1px 5px #193365;
+  font-size: 1rem;
+}
+
+.elemento {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: red;
+  position: fixed;
+  top: 50px;
+  left: 50px;
+  transform: translate(-50%, -50%);
+  transition: 0.3s ease-in-out;
+  z-index: 10;
+}/*# sourceMappingURL=style.css.map */

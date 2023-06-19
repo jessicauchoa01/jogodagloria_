@@ -1,0 +1,67 @@
+@use "../colors/_cores";
+@use "../fonts/_fonts";
+@use "../botoes/_botoes";
+@use "_modal";
+
+body {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: $background;
+  width: 100vw;
+  height: 100vh;
+}
+
+.caixa {
+  text-align: center;
+}
+
+.dados {
+  height: 306px;
+  width: 588px;
+  margin-bottom: -3rem;
+}
+
+.titulo {
+  letter-spacing: -0.5rem;
+  text-shadow: -1px 7px 1px #188ea8;
+  font-weight: 900;
+  font-size: 5rem;
+  font-family: $lilita;
+  color: #ffffff;
+}
+
+.jogar {
+  font-weight: 900;
+  font-family: $lilita;
+  background-color: $corBotao;
+  color: cores.$branco;
+  padding: 1rem 3.5rem;
+  border-radius: 2rem;
+  font-size: 11px;
+  text-shadow: $sombraTxt;
+  box-shadow: $sombraBotao;
+  margin-top: 3rem;
+  transition: $transicao;
+}
+
+.jogar:hover {
+  transition: $transicao;
+  background-color: $azulEscuro;
+  box-shadow: -1px 5px $azulEscuro;
+  font-size: 1rem;
+}
+
+.elemento {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: $vermelho;
+  position: fixed;
+  top: 50px;
+  left: 50px;
+  transform: translate(-50%, -50%);
+  transition: 0.3s ease-in-out;
+  z-index: 10;
+}
